@@ -42,7 +42,7 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="{% static 'assets/img/logo.png' %}" alt=""> -->
         <h1 class="sitename">Company</h1><span>.</span>
@@ -50,11 +50,11 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero">Home</a></li>
-          <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="{% url 'index' %}#hero">Home</a></li>
+          <li class="dropdown"><a href="{% url 'about' %}"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="team.html">Team</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
+              <!-- Team link removed, only testimonials remains -->
+              <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
               <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="#">Deep Dropdown 1</a></li>
@@ -66,11 +66,10 @@
               </li>
             </ul>
           </li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+          <li><a href="{% url 'pricing' %}">Pricing</a></li>
+          <li><a href="{% url 'contact' %}" class="active">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -93,7 +92,7 @@
         <h1 class="mb-2 mb-lg-0">Contact</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{% url 'index' %}">Home</a></li>
             <li class="current">Contact</li>
           </ol>
         </nav>
@@ -183,7 +182,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
+          <a href="{% url 'index' %}" class="logo d-flex align-items-center">
             <span class="sitename">Company</span>
           </a>
           <div class="footer-contact pt-3">
@@ -203,11 +202,11 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About us</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'terms' %}">Terms of service</a></li>
+            <li><a href="{% url 'privacy' %}">Privacy policy</a></li>
           </ul>
         </div>
 
